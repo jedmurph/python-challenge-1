@@ -135,32 +135,41 @@ while place_order:
             if menu_selection.isdigit():
 
                 # Convert the menu selection to an integer
-                number = int(menu_selection)
-                print(f"'{number}' is an excellent choice! ")
+                choice_number1 = int(menu_selection)
 
                 # 4. Check if the menu selection is in the menu items
-                if menu_selection in menu_items.keys():
+                if int(menu_selection) in menu_items.keys():
 
                     # Store the item name as a variable
 
-                    user_input = menu_selection.key()
+                    user_input = menu_selection
 
                     # Ask the customer for the quantity of the menu item
-                    quantity = input(f"How many '{menu_items} would you like? ")
+                    quantity = input(f"How many '{user_input, key}' would you like? If you don't answer you only get one! ")
 
 
                     # Check if the quantity is a number, default to 1 if not
+                
                     if quantity.isdigit():
+                        customer_choice = int(quantity)
+
 
                     # Add the item name, price, and quantity to the order list
-
+                    menu_items[i] = {
+                        "Item name": key,
+                        "Price": value,
+                        "Quantity": quantity
+                    }
 
                     # Tell the customer that their input isn't valid
+                  #  else:
+                       # print("You did not enter a number. ")
+
 
 
                 # Tell the customer they didn't select a menu option
                 else:
-                    print(f"{number} is not a menu option." )
+                    print(f"{choice_number1} is not a menu option." )
 
         else:
             # Tell the customer they didn't select a menu option
@@ -194,7 +203,7 @@ while place_order:
 print("This is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-#print(order)
+print(order)
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
